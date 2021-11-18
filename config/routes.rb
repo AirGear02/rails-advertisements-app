@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/', to: 'advertisements#index'
+
   get 'advertisements/index'
   get 'advertisements/show'
   get 'advertisements/new'
