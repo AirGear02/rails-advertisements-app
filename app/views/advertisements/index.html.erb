@@ -19,10 +19,10 @@
       </option>
     <% end %>
   </select>
-  <input type="submit" value="Пошук" class="btn btn-info">
+  <input type="submit" value="Пошук" class="btn btn-info submit">
 </form>
 
-<ul class="advertisements-list">
+<ul class="advertisments-list">
   <% @advertisements.each do |advertisement| %>
     <li class="list-item">
       <div class="my-advertisement-card">
@@ -59,10 +59,10 @@
             <span>Location: &nbsp</span>
             <span style="font-weight: bold"> <%= advertisement.city.name %> </span>
           </div>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </li>
-
   <% end %>
+
+  <%= paginate @advertisements %>
 </ul>

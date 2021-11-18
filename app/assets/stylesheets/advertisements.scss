@@ -2,15 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.advertisements-list {
+.advertisments-list {
   list-style: none;
   display: flex;
   width: 960px;
   flex-wrap: wrap;
-  margin: 90px auto auto;
+  margin: 20px auto auto;
 
   .list-item {
-    margin: 20px 10px;
+    margin: 10px;
     display: block;
   }
 
@@ -34,5 +34,27 @@
       }
     }
   }
+}
+
+.search-form {
+  width: 600px;
+  margin: 50px auto 0;
+
+  .form-select {
+    margin: 10px;
+  }
+
+  .submit {
+    display: block;
+    width: 100px;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.nav-block {
+  display: block;
+  margin: 20px auto 50px auto;
 }
 

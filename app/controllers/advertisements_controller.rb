@@ -1,4 +1,5 @@
 class AdvertisementsController < ApplicationController
+
   def index
     advertisements = Advertisement.includes(:city).eager_load(:city, :car_model)
 
@@ -14,7 +15,7 @@ class AdvertisementsController < ApplicationController
       advertisements = advertisements.where(:car_model_id => request.params[:model])
     end
 
-    @advertisements = advertisements
+    @advertisements = advertisements.page(1).per(9)
   end
 
   def show
