@@ -8,14 +8,14 @@ class AdvertisementsController < ApplicationController
     end
 
     unless request.params[:brand].blank?
-      advertisements = advertisements.where!('car_models.brand_id' => request.params[:brand])
+      advertisements.where!('car_models.brand_id' => request.params[:brand])
     end
 
     unless request.params[:model].blank?
-      advertisements = advertisements.where(:car_model_id => request.params[:model])
+      advertisements.where!(:car_model_id => request.params[:model])
     end
 
-    @advertisements = advertisements.page(1).per(9)
+    @advertisements = advertisements.page(request.params[:page]).per(9)
   end
 
   def show

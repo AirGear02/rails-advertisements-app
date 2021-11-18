@@ -1,6 +1,6 @@
 <form action="<%= advertisements_index_path %>" method="GET" class="search-form">
   <select name="city" class="form-select">
-    <option selected>Місто</option>
+    <option value="">Місто</option>
     <% City.all.each do |city| %>
       <option value="<%= city.id %>" <%= request.params[:city] == city.id.to_s ? 'selected' : ''%>><%= city.name %></option>
     <% end %>
@@ -63,6 +63,9 @@
       </div>
     </li>
   <% end %>
-
-  <%= paginate @advertisements %>
 </ul>
+
+<div class="container pagination justify-content-center" >
+  <%= paginate @advertisements %>
+</div>
+
